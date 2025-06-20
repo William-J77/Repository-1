@@ -4,8 +4,8 @@ while True:
     if name == "Quit":
         print("Welp, smell ya later!")
         break
-    elif name == "William":
-        print("Ah, William. The legend returns. ")
+    elif name == "John":
+        print("Ah, John. The legend returns. ")
     elif name == "Jimmy":
         print("Hey, Jimmy! Good to see you again. ")
     else:

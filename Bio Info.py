@@ -1,8 +1,8 @@
 # Variable exmaples
 """
 name = "Jimmy"
-age = 41
-height = 5.9
+age = 25
+height = 5.1
 is_happy = False
 
 print("Name:", name)
