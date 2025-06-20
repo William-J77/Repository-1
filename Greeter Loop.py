@@ -13,7 +13,7 @@ while True:
     elif name == "help":
         print("This program can give you a nice greeting, as well as a few fun custom messages.")
     elif name == "jimmy":
-        print("Jimmy is not here right now. Please leave a message afeter the beep.")
+        print("Jimmy is not here right now. Please leave a message after the beep.")
     elif name == "william":
         print("William is down at the corner store.")
     else:
@@ -32,3 +32,11 @@ while True:
         else:
             print("That is not a proper response. Terminate Terminate Terminate.")
     
+        vip_input = input("Are you a VIP? (yes/no)")
+        vip_input_clean = vip_input.strip().lower()
+
+        if name == "william" or name== "jimmy" or vip_input_clean == "yes":
+            print("You're on the VIP list!")
+        else:
+            print("Sorry, you're not on the list.")
+
