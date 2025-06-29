@@ -20,6 +20,9 @@ def dream_trip(name, destination, travel_method):
             "A weather check would be smart.",
         ]
         message += random.choice(tips)
+    
+    with open("trip_log.txt", "a") as file:
+        file.write(message + "\n")
         
     return message
 
