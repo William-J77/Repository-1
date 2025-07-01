@@ -1,7 +1,7 @@
 
 
 
-name = input(f"What is your name? \n")
+name = input("What is your name? \n")
 year = int(input("What year were you born? \n"))
 
 print(f"Hello, {name.title()}. You are {2025 - year} years old.\n")
