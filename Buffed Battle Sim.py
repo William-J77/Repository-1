@@ -1,8 +1,8 @@
-
+import random
 
 buff = 0
-life = 5
-enemy = 5
+life = 10
+enemy = 10
 
 def add_buff(x):
     global buff
@@ -11,9 +11,14 @@ def add_buff(x):
 def attack_seq(a):
     global enemy
     global buff
+    global life
     enemy -= a
     buff = 0
-    return enemy
+    enemy_damage = 0
+    if enemy > 0:
+            enemy_damage = random.randint(1, 5)
+            life -= enemy_damage
+    return enemy, life, enemy_damage
 
 def calc_total_damage():
     global buff 
@@ -22,9 +27,9 @@ def calc_total_damage():
 
 while True: 
     print("\n\nYour enemy approaches! \nWhat will you do?")
-    choice = input("\nBuff / Attack / Status / Quit? \n> ").strip().lower()
+    choice = input("\nBuff / Attack / Block / Status / Quit? \n> ").strip().lower()
     if choice == "quit":
-        print("\nRun away! Run away, sir Robin!!!")
+        print("\nRun away! Run away, sir Robin!!!\n")
         break
     elif choice == "buff":
         add_buff(2)
@@ -32,14 +37,18 @@ while True:
     elif choice == "attack":
         if enemy > 0:
             damage = calc_total_damage()
-            attack_seq(buff)
+            enemy, life, enemy_damage = attack_seq(buff)
             print(f"\nYou swing your sword at the enemy for {damage} points of damage! Enemy has {enemy} health left!")
+            print(f"The enemy hits you for {enemy_damage} damage! You have {life} hit points left.")
     elif choice == "status":
-        print(f"\nYou have {life} health. \nYour buff level is {buff}. \nEnemy has {enemy} health left.")
+        print(f"\nYou have {life} health. \nYour buff level is {buff}. \nEnemy has {enemy} health left.\n")
+    elif choice == "block":
+        print("\nYou raise your shield to block! The enemy's attack is stopped by your shield!")
     else:
         print("\nNot a valid choice. Choose again!")
     if enemy <= 0:
-            print(f"\nYou defeated your enemy with {life} health left!")
+            print(f"\nYou defeated your enemy with {life} health left!\n")
             break
-    
-    # enemy more health, enemy attacks, attack are random number between 1-5
+    if life <= 0:
+            print(f"\nYou have been defeated! The enemy has {enemy} hit points left.\n")
+            break
