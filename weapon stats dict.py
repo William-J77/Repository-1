@@ -30,18 +30,18 @@
 # print()
 # print(spell_stats)
 
-spell_stats = {
-    "power": 12,
-    "mana_cost": 8
-}
+# spell_stats = {
+#     "power": 12,
+#     "mana_cost": 8
+# }
 
-def safe_add_stat(spell_stats, key, value):
-    if key in spell_stats:
-        print(f"Stat {key} already exists with value {spell_stats[key]}.")
-    else:
-        spell_stats[key] = value
+# def safe_add_stat(spell_stats, key, value):
+#     if key in spell_stats:
+#         print(f"Stat {key} already exists with value {spell_stats[key]}.")
+#     else:
+#         spell_stats[key] = value
 
-safe_add_stat(spell_stats, "agility", 8)
+# safe_add_stat(spell_stats, "agility", 8)
 
-print()
-print(spell_stats)
+# print()
+# print(spell_stats)
